@@ -1,20 +1,21 @@
 # MurmurHash.js
 
-An optimized JavaScript implementation of the MurmurHash algorithms.
+Forked from this [repo](https://github.com/garycourt/murmurhash-js) to work with meteor. Originally conceived by Austin Appleby,
+this hash is very fast and low collision. Characteristics desired from a hash.
 
-These algorithms take a JavaScript string (and a seed), and quickly create a non-cryptographic 32-bit hash from it. And by quick I mean sub-millisecond performance.
+See [this](http://programmers.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed/145633#145633)
+for some detailed comparison between hashes.
 
-More information about these algorithms can be found at:
+# To acquire:
+meteor add jandres:murmur
 
-*	[MurmurHash Homepage](http://sites.google.com/site/murmurhash/)
-*	[Wikipedia Entry on MurmurHash](http://en.wikipedia.org/wiki/MurmurHash) 
+# Example:
 
-## License (MIT)
+```javascript
+MURMUR_HASH.murmur_2('asdf');  // murmur 2, without seed.
+MURMUR_HASH.murmur_2('asdf', 66);  // murmur 2, with seed.
 
-Copyright (c) 2011 Gary Court
+MURMUR_HASH.murmur_3('asdf');  // murmur 3, without seed.
+MURMUR_HASH.murmur_3('asdf', 66);  // murmur 3, with seed.
+```
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
